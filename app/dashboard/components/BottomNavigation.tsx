@@ -22,7 +22,7 @@ export function BottomNavigation({ activeTab = "home" }: BottomNavigationProps) 
   const router = useRouter();
 
   return (
-    <nav className="fixed bottom-0 w-full z-50 bg-surface-container-lowest border-t border-surface-variant/20">
+    <nav className="sticky bottom-0 w-full z-50 rounded-t-3xl shadow-lg bg-surface-container-lowest border-t border-surface-variant/20">
       <div className="flex justify-around items-center h-20 px-4 pb-safe">
         {tabs.slice(0, 2).map((tab) => {
           const isActive = tab.key === activeTab;

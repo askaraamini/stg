@@ -16,50 +16,56 @@ interface DailyMissionBannerProps {
 }
 
 export function DailyMissionBanner({ missions }: DailyMissionBannerProps) {
+  const incomplete = missions.find((m) => !m.done);
+
+  if (!incomplete || missions.length === 0) {
+    return (
+      <section className="mb-8">
+        <div className="bg-primary p-6 rounded-3xl text-white flex items-center justify-between relative overflow-hidden">
+          <div className="relative z-10">
+            <p className="text-label-sm font-label-sm uppercase tracking-widest opacity-80 mb-1">Misi Hari Ini</p>
+            <h3 className="text-headline-md font-headline-md mb-1">Semua Selesai! 🎉</h3>
+            <p className="text-label-sm text-white/70">Kembali besok untuk misi baru</p>
+          </div>
+          <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center relative z-10">
+            <MaterialIcon name="celebration" className="text-4xl text-white" filled />
+          </div>
+          <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-primary-container rounded-full opacity-50 blur-3xl" />
+        </div>
+      </section>
+    );
+  }
+
+  const pct = incomplete.target > 0
+    ? Math.round((incomplete.current / incomplete.target) * 100)
+    : 0;
+
   return (
     <section className="mb-8">
-      <div className="bg-primary p-5 rounded-3xl text-white card-shadow">
-        <div className="flex items-center gap-2 mb-4">
-          <MaterialIcon name="stars" className="text-secondary-container text-xl" filled />
-          <h3 className="text-headline-md font-bold">Misi Harian</h3>
+      <div className="bg-primary p-6 rounded-3xl text-white flex items-center justify-between relative overflow-hidden">
+        <div className="relative z-10">
+          <p className="text-label-sm font-label-sm uppercase tracking-widest opacity-80 mb-1">Misi Hari Ini</p>
+          <h3 className="text-headline-md font-headline-md mb-3">{incomplete.title}</h3>
+          <div className="flex items-center gap-2">
+            <div className="h-2 w-32 md:w-48 bg-white/20 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-secondary-container rounded-full transition-all duration-500"
+                style={{ width: `${pct}%` }}
+              />
+            </div>
+            <span className="text-label-sm font-label-sm">
+              {incomplete.current}/{incomplete.target}
+            </span>
+          </div>
         </div>
-
-        <div className="space-y-3">
-          {missions.map((m) => {
-            const pct = m.target > 0 ? Math.round((m.current / m.target) * 100) : 0;
-            return (
-              <div key={m.id} className="flex items-center gap-3">
-                <MaterialIcon
-                  name={m.icon}
-                  className={`text-lg ${m.done ? "text-secondary-container" : "text-white/60"}`}
-                  filled={m.done}
-                />
-                <div className="flex-1 min-w-0">
-                  <div className="flex justify-between items-center mb-0.5">
-                    <span className="text-label-sm font-bold truncate">{m.title}</span>
-                    <span className="text-label-sm text-white/70 shrink-0 ml-2">
-                      {m.done ? m.target : m.current}/{m.target}
-                    </span>
-                  </div>
-                  <div className="h-1.5 w-full bg-white/20 rounded-full overflow-hidden">
-                    <div
-                      className={`h-full rounded-full transition-all duration-500 ${
-                        m.done ? "bg-secondary-container" : "bg-white/50"
-                      }`}
-                      style={{ width: `${pct}%` }}
-                    />
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+        <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center relative z-10">
+          <MaterialIcon
+            name={incomplete.icon}
+            className="text-4xl text-white"
+            filled
+          />
         </div>
-
-        {missions.length === 0 && (
-          <p className="text-body-md text-white/70 text-center py-2">
-            Semua misi hari ini selesai! 🎉
-          </p>
-        )}
+        <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-primary-container rounded-full opacity-50 blur-3xl" />
       </div>
     </section>
   );

@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import "@fontsource/plus-jakarta-sans";
+import "@fontsource/plus-jakarta-sans/500.css";
+import "@fontsource/plus-jakarta-sans/600.css";
+import "@fontsource/plus-jakarta-sans/700.css";
+import "@fontsource/plus-jakarta-sans/800.css";
 import "./globals.css";
 import { UserProvider } from "@/lib/user-store";
 import { ScanProvider } from "@/lib/scan-store";
@@ -25,7 +29,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block"
         />
       </head>
-      <body className="min-h-screen overflow-y-auto font-sans bg-sky-blue-bg text-ink-navy">
+      <body className="min-h-screen font-sans bg-surface text-on-surface">
         <UserProvider>
           <ScanProvider>
             {children}

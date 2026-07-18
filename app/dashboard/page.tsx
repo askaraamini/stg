@@ -3,21 +3,15 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { DashboardLayout } from "./DashboardLayout";
-import { HeroScannerCard } from "./components/HeroScannerCard";
-import { ActiveSessionList } from "./components/ActiveSessionList";
-import { SubjectScoreGrid } from "./components/SubjectScoreGrid";
-import type { ActiveSession, SubjectScore, SessionStatus } from "./types";
+import { HeroCarousel } from "./components/HeroCarousel";
+import { ContinueLearning } from "./components/ContinueLearning";
+import { SubjectScoreList } from "./components/SubjectScoreList";
+import { DailyMissionBanner } from "./components/DailyMissionBanner";
+import { DAILY_MISSIONS } from "@/app/misi/mission-data";
+import type { ActiveSession, SessionStatus } from "./types";
+import type { UserStats } from "@/lib/misi-stats";
 import { getDeviceId } from "@/lib/device-id";
 import { useUser } from "@/lib/user-store";
-
-const SUBJECT_META: Record<string, { icon: string; bgClass: string; textClass: string }> = {
-  Matematika: { icon: "functions", bgClass: "bg-rose-100", textClass: "text-primary" },
-  "IPA (Sains)": { icon: "biotech", bgClass: "bg-emerald-100", textClass: "text-success-green" },
-  "Bahasa Indonesia": { icon: "translate", bgClass: "bg-yellow-100", textClass: "text-secondary" },
-  "Bahasa Inggris": { icon: "language", bgClass: "bg-blue-100", textClass: "text-blue-600" },
-  "IPS (Sejarah)": { icon: "history_edu", bgClass: "bg-purple-100", textClass: "text-purple-600" },
-  "Seni & Budaya": { icon: "palette", bgClass: "bg-orange-100", textClass: "text-orange-600" },
-};
 
 const SUBJECT_ORDER = [
   "Matematika",
@@ -48,31 +42,60 @@ function computeSessionStatus(summary: any): {
   return { status: "exam_failed", progress: 80, examScore };
 }
 
+function computeSubjectScores(sessions: any[]): { subject: string; score: number | null }[] {
+  const scoreMap: Record<string, number[]> = {};
+  for (const subject of SUBJECT_ORDER) scoreMap[subject] = [];
+
+  for (const s of sessions) {
+    const summary = typeof s.summary === "string" ? (() => { try { return JSON.parse(s.summary); } catch { return null; } })() : s.summary;
+    if (!summary?.exam?.score) continue;
+    const subject = s.subject || summary?.subject || "Matematika";
+    if (scoreMap[subject]) {
+      scoreMap[subject].push(summary.exam.score);
+    }
+  }
+
+  return SUBJECT_ORDER.map((subject) => {
+    const vals = scoreMap[subject];
+    return {
+      subject,
+      score: vals.length > 0 ? Math.round(vals.reduce((a, b) => a + b, 0) / vals.length) : null,
+    };
+  });
+}
+
 export default function DashboardPage() {
   const router = useRouter();
-  const { userId, userName } = useUser();
+  const { userId } = useUser();
 
   const [loading, setLoading] = useState(true);
   const [activeSessions, setActiveSessions] = useState<ActiveSession[]>([]);
-  const [subjectScores, setSubjectScores] = useState<SubjectScore[]>([]);
+  const [subjectScores, setSubjectScores] = useState<{ subject: string; score: number | null }[]>([]);
+  const [dailyMissions, setDailyMissions] = useState<{ id: string; title: string; icon: string; done: boolean; current: number; target: number }[]>([]);
 
   useEffect(() => {
     (async () => {
       try {
         const uid = userId || getDeviceId();
-        const res = await fetch(`/api/sessions?userId=${uid}`);
-        if (!res.ok) throw new Error("Gagal mengambil sesi");
-        const { sessions } = await res.json();
+        if (!uid) { setLoading(false); return; }
+
+        const [sessionsRes, statsRes] = await Promise.all([
+          fetch(`/api/sessions?userId=${uid}`),
+          fetch(`/api/misi/stats?userId=${uid}`),
+        ]);
+
+        const sessionsData = sessionsRes.ok ? await sessionsRes.json() : { sessions: [] };
+        const stats: UserStats | null = statsRes.ok ? await statsRes.json() : null;
+
+        const sessions = sessionsData.sessions || [];
 
         const sessionsList: ActiveSession[] = [];
-        const scoreMap: Record<string, number[]> = {};
-        for (const subject of SUBJECT_ORDER) scoreMap[subject] = [];
-
         for (const s of sessions) {
-          const summary = s.summary;
+          const summary = typeof s.summary === "string"
+            ? (() => { try { return JSON.parse(s.summary); } catch { return null; } })()
+            : s.summary;
           const subject = s.subject || summary?.subject || "Matematika";
           const { status, progress, examScore } = computeSessionStatus(summary);
-
           sessionsList.push({
             id: s.id,
             subjectName: subject,
@@ -81,38 +104,28 @@ export default function DashboardPage() {
             startedAt: s.started_at,
             status,
           });
-
-          if (examScore !== null && scoreMap[subject] !== undefined) {
-            scoreMap[subject].push(examScore);
-          }
         }
 
         setActiveSessions(sessionsList);
+        setSubjectScores(computeSubjectScores(sessions));
 
-        const scores: SubjectScore[] = SUBJECT_ORDER.map((subject) => {
-          const vals = scoreMap[subject];
-          const meta = SUBJECT_META[subject];
-          const avg = vals.length > 0 ? Math.round(vals.reduce((a, b) => a + b, 0) / vals.length) : null;
-          return {
-            subject,
-            icon: meta.icon,
-            score: avg,
-            bgClass: meta.bgClass,
-            textClass: meta.textClass,
-          };
-        });
-
-        setSubjectScores(scores);
+        if (stats) {
+          setDailyMissions(
+            DAILY_MISSIONS.map((m) => {
+              const result = m.check(stats);
+              return {
+                id: m.id,
+                title: m.title,
+                icon: m.icon,
+                done: result.done,
+                current: result.current,
+                target: result.target,
+              };
+            })
+          );
+        }
       } catch {
-        setSubjectScores(
-          SUBJECT_ORDER.map((subject) => ({
-            subject,
-            icon: SUBJECT_META[subject].icon,
-            score: null,
-            bgClass: SUBJECT_META[subject].bgClass,
-            textClass: SUBJECT_META[subject].textClass,
-          }))
-        );
+        // silent fallback
       } finally {
         setLoading(false);
       }
@@ -121,33 +134,35 @@ export default function DashboardPage() {
 
   const ongoingSessions = activeSessions.filter((s) => s.status !== "exam_passed");
 
+  const handleContinue = (id: string) => {
+    if (id === "new") { router.push("/scan"); return; }
+    const session = activeSessions.find((s) => s.id === id);
+    if (!session) return;
+    if (session.status === "pretest_done") {
+      router.push(`/learn?id=${id}`);
+    } else if (session.status === "exam_ready" || session.status === "exam_failed") {
+      router.push(`/exam?id=${id}`);
+    }
+  };
+
   if (loading) {
     return (
-      <DashboardLayout userName={userName} streakCount={0} activeTab="home">
-        <div className="flex flex-col items-center justify-center py-16 gap-4">
+      <DashboardLayout activeTab="home">
+        <div className="flex flex-col items-center justify-center py-16 gap-4 min-h-screen">
           <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin" />
-          <p className="text-headline-md text-on-surface-variant animate-pulse">Memuat sesi...</p>
+          <p className="text-body-md text-on-surface-variant animate-pulse">Memuat...</p>
         </div>
       </DashboardLayout>
     );
   }
 
   return (
-    <DashboardLayout userName={userName} streakCount={0} activeTab="home">
-      <HeroScannerCard />
-      <ActiveSessionList
-        sessions={ongoingSessions}
-        onContinue={(id) => {
-          const session = activeSessions.find((s) => s.id === id);
-          if (!session) return;
-          if (session.status === "pretest_done") {
-            router.push(`/learn?id=${id}`);
-          } else if (session.status === "exam_ready" || session.status === "exam_failed") {
-            router.push(`/exam?id=${id}`);
-          }
-        }}
-      />
-      <SubjectScoreGrid scores={subjectScores} />
+    <DashboardLayout activeTab="home">
+      <HeroCarousel />
+      <ContinueLearning sessions={ongoingSessions} onContinue={handleContinue} />
+      <SubjectScoreList scores={subjectScores}>
+        <DailyMissionBanner missions={dailyMissions} />
+      </SubjectScoreList>
     </DashboardLayout>
   );
 }

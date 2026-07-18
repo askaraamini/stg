@@ -120,7 +120,7 @@ export default function ProfilePage() {
   }
 
   return (
-    <div className="bg-sky-blue-bg min-h-screen flex flex-col">
+    <div className="bg-sky-blue-bg h-screen overflow-y-auto flex flex-col">
       {/* Top Navigation */}
       <header className="flex items-center justify-between px-container-margin-mobile h-16 bg-surface border-b-2 border-ink-navy shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] sticky top-0 z-50">
         <div className="flex items-center gap-2">
