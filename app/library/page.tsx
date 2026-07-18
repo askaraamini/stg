@@ -138,7 +138,7 @@ export default function LibraryPage() {
   }
 
   return (
-    <div className="bg-sky-blue-bg h-screen flex flex-col">
+    <div className="bg-sky-blue-bg h-dvh flex flex-col">
       <div className="flex-1 min-h-0 overflow-y-auto">
         {/* Header */}
       <header className="sticky top-0 w-full z-50 flex flex-col bg-surface px-container-margin-mobile py-4 border-b-4 border-ink-navy shadow-[4px_4px_0px_0px_rgba(15,23,42,1)]">

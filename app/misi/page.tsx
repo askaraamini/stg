@@ -133,7 +133,7 @@ export default function MisiPage() {
   }
 
   return (
-    <div className="bg-gradient-to-b from-sky-100 via-blue-50 to-white h-screen overflow-y-auto flex flex-col">
+    <div className="bg-gradient-to-b from-sky-100 via-blue-50 to-white h-dvh overflow-y-auto flex flex-col">
       {/* Header */}
       <header className="flex items-center justify-between px-container-margin-mobile h-16 bg-white/90 backdrop-blur-md border-b-[3px] border-ink-navy shadow-[0_4px_0px_0px_rgba(15,23,42,1)] sticky top-0 z-50">
         <div className="flex items-center gap-3">

@@ -11,7 +11,7 @@ export function DashboardLayout({
   activeTab = "home",
 }: DashboardLayoutProps) {
   return (
-    <div className="flex flex-col h-screen overflow-hidden">
+    <div className="flex flex-col h-dvh overflow-hidden">
       <MobileTopBar />
       <main className="flex-1 flex flex-col min-h-0 overflow-hidden px-container-margin max-w-md mx-auto md:max-w-6xl md:mx-auto md:px-8">
         {children}
