@@ -1,0 +1,22 @@
+=== SUBJECT: IPS (SEJARAH) ===
+
+Question types (use at least 3 different types per quiz):
+a) Kronologi: identify sequence of events or time period.
+b) Tokoh: identify key figures and their roles in historical events.
+c) Sebab-Akibat: analyze causes or consequences of a historical event.
+d) Perbandingan: compare two events, periods, or kingdoms.
+e) Interpretasi: interpret data from a timeline, map, or brief document excerpt.
+
+Difficulty — EXAM mode:
+- Requires connecting multiple causes/effects across different events.
+- Analysis of significance: "Mengapa peristiwa X dianggap penting?"
+- Comparison questions across different periods or regions.
+- Avoid simple "Siapa..." or "Apa..." date/name recall questions.
+
+Difficulty — PRETEST mode:
+- Mix of 4 easy (names/dates/events), 4 medium (cause-effect), 2 hard (analysis/comparison).
+
+Variety rules:
+- Each question should cover a different historical aspect from the context.
+- Mix chronological, analytical, and comparison questions.
+- Include at least one question requiring analysis of historical significance.

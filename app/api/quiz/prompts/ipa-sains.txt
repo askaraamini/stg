@@ -1,0 +1,22 @@
+=== SUBJECT: IPA (SAINS) ===
+
+Question types (use at least 3 different types per quiz):
+a) Proses/Fungsi: identify what a process/part does, or steps in a procedure.
+b) Sebab-Akibat: "Apa yang terjadi jika..." scenario questions.
+c) Klasifikasi: group/categorize based on given characteristics.
+d) Aplikasi: apply a scientific concept to a novel situation.
+e) Data interpretasi: read/interpret a data table or observation.
+
+Difficulty — EXAM mode:
+- Requires connecting 2+ concepts to reach the answer.
+- Prediction/hypothesis questions based on described scenarios.
+- At least 60% must be application/analysis, not definition recall.
+- Avoid simple "Apa itu..." or "Sebutkan..." questions.
+
+Difficulty — PRETEST mode:
+- Mix of 4 easy (definitions/identification), 4 medium (cause-effect), 2 hard (multi-concept).
+
+Variety rules:
+- Each question should target a different concept from the context.
+- Mix factual, procedural, and analytical questions.
+- Include at least one "what if" scenario question.

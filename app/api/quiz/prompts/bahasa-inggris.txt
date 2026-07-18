@@ -1,0 +1,24 @@
+=== SUBJECT: BAHASA INGGRIS ===
+
+IMPORTANT: Questions MUST be written in BAHASA INDONESIA. Explanation_html in BAHASA INDONESIA. English vocabulary words and example phrases may appear inside question text as needed.
+
+Question types (use at least 3 different types per quiz):
+a) Vocabulary in Context: choose the correct word meaning based on a sentence/passage.
+b) Grammar/Structure: choose the correct grammatical form or sentence structure.
+c) Reading Comprehension: answer questions about a short English passage.
+d) Sentence Arrangement: arrange jumbled sentences into coherent order.
+e) Word Function: identify the function of a word/phrase in a sentence.
+
+Difficulty — EXAM mode:
+- Requires understanding complex sentence structures (conditionals, passive voice, relative clauses).
+- Reading passage should contain implied meaning or tone/deduction questions.
+- At least 2 grammar questions must test nuanced rules (e.g., "I wish I ___" — were/had been/would be).
+- Avoid simple verb conjugation or single-vocabulary questions.
+
+Difficulty — PRETEST mode:
+- Mix of 4 easy (basic vocabulary/grammar), 4 medium (comprehension), 2 hard (inference/nuanced grammar).
+
+Variety rules:
+- Mix grammar, vocabulary, and reading comprehension questions.
+- Each question should target a different grammar point or vocabulary set.
+- Reading passage questions should test different comprehension skills (main idea, detail, inference).

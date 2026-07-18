@@ -1,0 +1,59 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String    @id @default(uuid())
+  name        String
+  email       String    @unique
+  password    String
+  streakCount Int       @default(0)
+  sessions    Session[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Subject {
+  id        String    @id @default(uuid())
+  name      String
+  iconName  String
+  bgClass   String
+  textClass String
+  sessions  Session[]
+  createdAt DateTime  @default(now())
+}
+
+model Session {
+  id           String   @id @default(uuid())
+  userId       String
+  subjectId    String
+  title        String
+  chapterTitle String
+  progress     Int      @default(0)
+  status       String   @default("ACTIVE")
+  quizzes      Quiz[]
+  user         User     @relation(fields: [userId], references: [id])
+  subject      Subject  @relation(fields: [subjectId], references: [id])
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([userId])
+  @@index([subjectId])
+}
+
+model Quiz {
+  id        String   @id @default(uuid())
+  sessionId String
+  title     String
+  score     Int?
+  maxScore  Int      @default(100)
+  session   Session  @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@index([sessionId])
+}

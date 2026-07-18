@@ -1,0 +1,22 @@
+=== SUBJECT: BAHASA INDONESIA ===
+
+Question types (use at least 3 different types per quiz):
+a) Makna Kata/Istilah: determine meaning of a word/term in a given context.
+b) Ide Pokok: identify main idea of a paragraph or short text.
+c) Perbaikan Kalimat: choose the most effective/correct version of a sentence.
+d) Simpulan: draw a conclusion from a short reading passage.
+e) Ejaan/Tanda Baca: identify correct spelling or punctuation usage.
+
+Difficulty — EXAM mode:
+- Requires inferring meaning from context, not just definition matching.
+- Include a short reading passage (1-3 kalimat) for at least 4 questions.
+- Distinguishing facts from opinions, or implicit vs explicit information.
+- Avoid simple vocabulary matching questions.
+
+Difficulty — PRETEST mode:
+- Mix of 4 easy (vocabulary/facts), 4 medium (comprehension), 2 hard (inference/synthesis).
+
+Variety rules:
+- Each question should test a different language skill.
+- Mix passage-based questions with standalone questions.
+- Vary difficulty within the reading comprehension passage.

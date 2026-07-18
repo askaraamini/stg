@@ -1,0 +1,9 @@
+export function getDeviceId(): string {
+  if (typeof window === "undefined") return "server";
+  let id = localStorage.getItem("aksaraa_device_id");
+  if (!id) {
+    id = crypto.randomUUID();
+    localStorage.setItem("aksaraa_device_id", id);
+  }
+  return id;
+}

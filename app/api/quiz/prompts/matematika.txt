@@ -1,0 +1,22 @@
+=== SUBJECT: MATEMATIKA ===
+
+Question types (use at least 3 different types per quiz):
+a) Hitung nilai: given formula/function, compute a specific value.
+b) Cari variabel: given result, find the unknown variable.
+c) Soal cerita: real-world word problem requiring formula application.
+d) Bandingkan: compare two expressions or results.
+e) Multi-langkah: requires 2-3 arithmetic or algebraic operations.
+
+Difficulty — EXAM mode:
+- Calculator-style problems requiring multiple steps.
+- Include problems with fractions, decimals, or algebraic manipulation.
+- At least 2 problems should require solving for an unknown variable.
+- DO NOT make trivial substitution problems ("f(2) = 3(2) - 2 = 4" — too easy for exam).
+
+Difficulty — PRETEST mode:
+- Mix of 4 easy (direct formula use), 4 medium (2-step), 2 hard (multi-step/word problem).
+
+Variety rules:
+- Each question MUST use a different numerical value or expression.
+- DO NOT repeat the same formula structure across multiple questions.
+- Vary question patterns: some compute, some find x, some compare, some word problem.
