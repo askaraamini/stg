@@ -68,7 +68,7 @@ export function SubjectScoreList({ scores, children }: SubjectScoreListProps) {
                   </div>
                 )}
               </div>
-              <div className="flex-grow relative z-10">
+              <div className="flex-grow min-w-0 relative z-10">
                 <h4 className={`font-headline-md text-[16px] md:text-xl leading-tight font-semibold ${textColor}`}>{s.subject}</h4>
               </div>
               <ScoreRing score={s.score} strokeColor={ringColor} textColor={textColor} />

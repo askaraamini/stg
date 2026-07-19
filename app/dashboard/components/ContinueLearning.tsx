@@ -46,7 +46,7 @@ export function ContinueLearning({ sessions, onContinue }: ContinueLearningProps
   return (
     <section className="mb-8">
       <h3 className="text-headline-md font-bold mb-4">Lanjutkan Pelajaran</h3>
-      <div className="flex gap-4 overflow-x-auto scroll-hide -mx-container-margin px-container-margin py-2 md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-visible md:gap-3 md:mx-0 md:px-0">
+      <div className="flex gap-4 overflow-x-auto scroll-hide py-2 md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-visible md:gap-3 md:mx-0 md:px-0">
         {sessions.map((session, idx) => {
           const meta = SUBJECT_ICONS[session.subjectName];
           const gradient = meta?.gradient ?? "from-purple-100 to-pink-100";
