@@ -43,7 +43,7 @@ export function SubjectScoreList({ scores, children }: SubjectScoreListProps) {
   return (
     <section>
       {/* Title */}
-      <div className="flex justify-between items-end mb-4">
+      <div className="sticky top-0 z-10 bg-surface flex justify-between items-end mb-4">
         <h3 className="font-headline-md text-headline-md text-on-surface">Rata-rata Nilai</h3>
       </div>
 
@@ -84,7 +84,7 @@ export function SubjectScoreList({ scores, children }: SubjectScoreListProps) {
           </div>
         )}
 
-        {children}
+        <div className="md:col-span-2 lg:col-span-3">{children}</div>
       </div>
     </section>
   );
