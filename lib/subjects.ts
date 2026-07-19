@@ -59,3 +59,21 @@ export const SUBJECT_ORDER = [
   "Bahasa Indonesia",
   "Seni & Budaya",
 ];
+
+export const SUBJECT_HERO_GRADIENTS: Record<string, string> = {
+  "Matematika": "from-purple-600 to-indigo-600",
+  "IPA (Sains)": "from-blue-600 to-teal-600",
+  "IPS (Sejarah)": "from-orange-600 to-yellow-600",
+  "Bahasa Inggris": "from-indigo-600 to-blue-600",
+  "Bahasa Indonesia": "from-red-600 to-orange-600",
+  "Seni & Budaya": "from-emerald-600 to-green-600",
+};
+
+export const SUBJECT_IMAGE_FILE: Record<string, string> = {
+  "Matematika": "/images/Matematika.png",
+  "IPA (Sains)": "/images/IPA.png",
+  "IPS (Sejarah)": "/images/IPS.png",
+  "Bahasa Inggris": "/images/Bahasa inggris.png",
+  "Bahasa Indonesia": "/images/Bahasa Indonesia.png",
+  "Seni & Budaya": "/images/Seni & Budaya.png",
+};
