@@ -41,14 +41,14 @@ export function SubjectScoreList({ scores, children }: SubjectScoreListProps) {
   });
 
   return (
-    <section className="flex-1 flex flex-col min-h-0 overflow-hidden">
+    <section className="flex-1 flex flex-col min-h-0">
       {/* Title — never moves, stays in normal flow */}
       <div className="flex-shrink-0 flex justify-between items-end mb-4">
         <h3 className="font-headline-md text-headline-md text-on-surface">Rata-rata Nilai</h3>
       </div>
 
       {/* Scrollable content — cards + daily mission */}
-      <div className="flex-1 overflow-y-auto min-h-0 space-y-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-4 md:space-y-0">
+      <div className="flex-1 overflow-y-auto min-h-0 space-y-3 md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-4">
         {allScoresInOrder.map((s) => {
           const meta = SUBJECT_ICONS[s.subject];
           const gradient = meta?.gradient ?? "from-gray-100 to-gray-200";
@@ -57,19 +57,19 @@ export function SubjectScoreList({ scores, children }: SubjectScoreListProps) {
           return (
             <div
               key={s.subject}
-              className={`bg-gradient-to-br ${gradient} p-4 rounded-2xl card-shadow flex items-center gap-4 relative overflow-hidden border border-white/50`}
+              className={`bg-gradient-to-br ${gradient} p-3 md:p-5 rounded-2xl card-shadow flex items-center gap-4 relative overflow-hidden border border-white/50`}
             >
-              <div className="w-14 h-14 rounded-xl overflow-hidden flex-shrink-0 bg-white/60 backdrop-blur-md flex items-center justify-center shadow-sm relative z-10">
+              <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl overflow-hidden flex-shrink-0 bg-white/60 backdrop-blur-md flex items-center justify-center shadow-sm relative z-10">
                 {meta?.imageUrl ? (
-                  <img alt={s.subject} className="w-10 h-10 object-contain" src={meta.imageUrl} />
+                  <img alt={s.subject} className="w-8 h-8 md:w-11 md:h-11 object-contain" src={meta.imageUrl} />
                 ) : (
-                  <div className="w-10 h-10 flex items-center justify-center text-on-surface">
+                  <div className="w-8 h-8 md:w-11 md:h-11 flex items-center justify-center text-on-surface">
                     <span className="material-symbols-outlined text-2xl">menu_book</span>
                   </div>
                 )}
               </div>
               <div className="flex-grow relative z-10">
-                <h4 className={`font-headline-md text-[18px] leading-tight font-semibold ${textColor}`}>{s.subject}</h4>
+                <h4 className={`font-headline-md text-[16px] md:text-xl leading-tight font-semibold ${textColor}`}>{s.subject}</h4>
               </div>
               <ScoreRing score={s.score} strokeColor={ringColor} textColor={textColor} />
             </div>
