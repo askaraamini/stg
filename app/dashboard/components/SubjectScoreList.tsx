@@ -41,14 +41,14 @@ export function SubjectScoreList({ scores, children }: SubjectScoreListProps) {
   });
 
   return (
-    <section className="flex-1 flex flex-col min-h-0">
-      {/* Title — never moves, stays in normal flow */}
-      <div className="flex-shrink-0 flex justify-between items-end mb-4">
+    <section>
+      {/* Title */}
+      <div className="flex justify-between items-end mb-4">
         <h3 className="font-headline-md text-headline-md text-on-surface">Rata-rata Nilai</h3>
       </div>
 
-      {/* Scrollable content — cards + daily mission */}
-      <div className="flex-1 overflow-y-auto min-h-0 space-y-3 md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-4">
+      {/* Cards + daily mission */}
+      <div className="space-y-3 md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-4">
         {allScoresInOrder.map((s) => {
           const meta = SUBJECT_ICONS[s.subject];
           const gradient = meta?.gradient ?? "from-gray-100 to-gray-200";
