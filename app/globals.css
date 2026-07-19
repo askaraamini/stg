@@ -223,6 +223,10 @@
     box-shadow: 0px 0px 0px 0px rgba(15,23,42,1) !important;
   }
 
+  .speech-bubble {
+    position: relative;
+  }
+
   .speech-bubble::after {
     content: '';
     position: absolute;

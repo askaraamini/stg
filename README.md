@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aksaraa
+
+A Next.js app for kids' learning — scan books, take quizzes, track progress.
+
+## Tech Stack
+
+- **Next.js 16.2.10** (Turbopack) — **read `node_modules/next/dist/docs/` before coding; this version has breaking changes from earlier Next.js**
+- React 19, TypeScript 5
+- Tailwind CSS 3.4 with custom theme tokens
+- Supabase (auth + storage)
+- Prisma (PostgreSQL)
+- PM2 (production process manager)
+- Plus Jakarta Sans, Material Symbols
+
+## Prerequisites
+
+- Node.js >= 20
+- npm
+- Supabase project (for auth & storage)
+- PostgreSQL (via Supabase or local)
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+cp .env.example .env.local   # fill in Supabase keys
+npm run dev                   # → http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Build & Production
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build   # production build
+npm run start   # serve production build on port 3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+```
+app/
+├── dashboard/      # Home tab — layout, scores, missions
+├── library/        # Koleksi — subject list + [subject] detail page
+├── scan/           # Camera scanning flow
+├── learn/          # Quiz & reflection
+├── exam/           # Exam page
+├── misi/           # Missions page
+├── profile/        # User profile
+├── review/         # Review completed materials
+├── register/       # Registration
+├── login/          # Login
+└── api/            # Backend routes (sessions, quiz, upload, etc.)
+lib/                # Shared utilities, stores, db clients
+components/         # Shared UI components
+prisma/             # Database schema
+whatsapp-service/   # WhatsApp notification service (Node.js)
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Environment Variables
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Copy `.env.example` → `.env.local` and set:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Variable | Description |
+|----------|-------------|
+| `NEXT_PUBLIC_SUPABASE_URL` | Supabase project URL |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase anon key |
+| `DATABASE_URL` | PostgreSQL connection string |
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See [`AGENTS.md`](./AGENTS.md) for complete VPS deployment procedure.

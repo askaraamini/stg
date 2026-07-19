@@ -631,6 +631,23 @@ function LearnContent() {
         {/* Progress Bar Section */}
         <QuizProgress current={currentIndex + 1} total={totalQuestions} />
 
+        {/* Encouragement mascot */}
+        {!showFeedback && (
+          <div className="flex items-start gap-3 mt-4 mb-2">
+            <div className="w-16 h-16 md:w-20 md:h-20 flex-shrink-0 float-anim">
+              <img
+                alt="Aksaraa Friend"
+                className="w-full h-full object-contain"
+                src="/images/friend.png"
+              />
+            </div>
+            <div className="bg-white border-2 border-ink-navy rounded-xl rounded-tl-none p-3 md:p-4 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)]">
+              <p className="text-body-md font-bold text-ink-navy">Ayo semangat! Kamu pasti bisa!</p>
+            </div>
+          </div>
+        )}
+        {showFeedback && <div className="h-4 md:h-6" />}
+
         {/* Question Card */}
         <QuizQuestion
           question={currentQuestion!.question}
