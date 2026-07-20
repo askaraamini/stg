@@ -933,12 +933,13 @@ function ExamContent() {
       {/* FAB Tanya */}
       <button
         onClick={() => { setShowTanya(true); setTanyaPulse(false); }}
-        className={`fixed bottom-container-margin-mobile right-container-margin-mobile md:bottom-container-margin-desktop md:right-container-margin-desktop rounded-full w-20 h-20 md:w-24 md:h-24 flex flex-col items-center justify-center border-2 border-ink-navy shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] hover:scale-110 transition-transform active:translate-y-1 active:shadow-none z-50 btn-tactile ${
-          tanyaPulse
-            ? "bg-secondary-container text-ink-navy animate-pulse-tanya"
-            : "bg-primary text-on-primary"
-        }`
+        className={"fixed bottom-container-margin-mobile right-container-margin-mobile md:bottom-container-margin-desktop md:right-container-margin-desktop rounded-full w-20 h-20 md:w-24 md:h-24 flex flex-col items-center justify-center border-2 border-ink-navy shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] hover:scale-110 transition-transform active:translate-y-1 active:shadow-none z-50 btn-tactile relative" + (tanyaPulse ? " bg-secondary-container text-ink-navy animate-pulse-tanya ring-4 ring-success-green" : " bg-primary text-on-primary")}
       >
+        {tanyaPulse && (
+          <span className="absolute -top-1 -right-1 w-5 h-5 bg-error text-white rounded-full text-[10px] font-black flex items-center justify-center animate-pulse shadow-md z-[60]">
+            ?
+          </span>
+        )}
         <MaterialIcon name="front_hand" className="text-3xl md:text-4xl mb-1" filled />
         <span className="text-label-sm font-label-sm">Tanya</span>
       </button>

@@ -115,8 +115,8 @@ const config: Config = {
           "50%": { transform: "translateY(-12px)" },
         },
         tanyaPulse: {
-          "0%, 100%": { boxShadow: "0 0 0 0 rgba(253, 192, 3, 0.6)", transform: "scale(1)" },
-          "50%": { boxShadow: "0 0 0 16px rgba(253, 192, 3, 0)", transform: "scale(1.05)" },
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.15)" },
         },
       },
       animation: {
