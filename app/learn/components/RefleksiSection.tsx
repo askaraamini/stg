@@ -653,12 +653,17 @@ function RefleksiSection({ contextMeta, sessionId, subject, title, onComplete, o
 
           <button
             onClick={triggerComplete}
-            disabled={isLoading}
+            disabled={isLoading || timeLeft > 300}
             className="bg-primary text-on-primary border-2 border-ink-navy px-6 py-2 rounded-lg font-black flex items-center gap-2 shadow-[3px_3px_0px_0px_rgba(15,23,42,1)] active:translate-y-0.5 active:shadow-none transition-all hover:scale-105 disabled:opacity-40 disabled:cursor-not-allowed"
           >
             <span className="text-label-lg">Selesai</span>
             <MaterialIcon name="check_circle" className="text-lg" filled />
           </button>
+          {timeLeft > 300 && (
+            <p className="text-label-sm text-on-surface-variant text-center max-w-[140px]">
+              Ceritakan dulu apa yang kamu pelajari minimal 5 menit
+            </p>
+          )}
         </div>
       </div>
     </main>

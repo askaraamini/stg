@@ -77,6 +77,8 @@ function ExamContent() {
   const answersRef = useRef<(number | null)[]>([]);
   const contextMetaRef = useRef<any>(null);
   const [showTanya, setShowTanya] = useState(false);
+  const [tanyaPulse, setTanyaPulse] = useState(false);
+  const tanyaTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Sync answersRef with latest answers state
   useEffect(() => {
@@ -448,6 +450,20 @@ function ExamContent() {
     setCurrentIndex((i) => i - 1);
   }, [currentIndex]);
 
+  // Tanya pulse — animate after 2 min on unanswered question
+  useEffect(() => {
+    if (tanyaTimerRef.current) clearTimeout(tanyaTimerRef.current);
+    setTanyaPulse(false);
+    if (answers[currentIndex] === null && !showResults) {
+      tanyaTimerRef.current = setTimeout(() => {
+        setTanyaPulse(true);
+      }, 120000);
+    }
+    return () => {
+      if (tanyaTimerRef.current) clearTimeout(tanyaTimerRef.current);
+    };
+  }, [currentIndex, answers[currentIndex], showResults]);
+
   const handleFinish = () => {
     router.push("/dashboard");
   };
@@ -671,6 +687,12 @@ function ExamContent() {
             >
               Lihat Pembahasan
             </button>
+            <button
+              onClick={handleFinish}
+              className="mt-6 bg-primary text-white border-4 border-ink-navy shadow-[6px_6px_0px_0px_rgba(17,24,39,1)] rounded-full px-12 py-5 text-headline-md font-black w-full transition-all active:translate-y-1 active:shadow-none hover:scale-105"
+            >
+              Akhiri Sesi
+            </button>
           </div>
         </main>
       </div>
@@ -774,7 +796,7 @@ function ExamContent() {
               />
             )}
             <h1
-              className="text-sm md:text-body-md font-bold text-ink-navy mb-stack-md text-center"
+              className="text-sm md:text-body-md font-bold text-ink-navy mb-8 text-center"
               dangerouslySetInnerHTML={{
                 __html: DOMPurify.sanitize(currentQuestion?.question || "", {
                   ALLOWED_TAGS: ["b", "i", "span", "br", "p", "sub", "sup"],
@@ -910,8 +932,12 @@ function ExamContent() {
 
       {/* FAB Tanya */}
       <button
-        onClick={() => setShowTanya(true)}
-        className="fixed bottom-container-margin-mobile right-container-margin-mobile md:bottom-container-margin-desktop md:right-container-margin-desktop bg-primary text-on-primary rounded-full w-20 h-20 md:w-24 md:h-24 flex flex-col items-center justify-center border-2 border-ink-navy shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] hover:scale-110 transition-transform active:translate-y-1 active:shadow-none z-50 btn-tactile"
+        onClick={() => { setShowTanya(true); setTanyaPulse(false); }}
+        className={`fixed bottom-container-margin-mobile right-container-margin-mobile md:bottom-container-margin-desktop md:right-container-margin-desktop rounded-full w-20 h-20 md:w-24 md:h-24 flex flex-col items-center justify-center border-2 border-ink-navy shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] hover:scale-110 transition-transform active:translate-y-1 active:shadow-none z-50 btn-tactile ${
+          tanyaPulse
+            ? "bg-secondary-container text-ink-navy animate-pulse-tanya"
+            : "bg-primary text-on-primary"
+        }`
       >
         <MaterialIcon name="front_hand" className="text-3xl md:text-4xl mb-1" filled />
         <span className="text-label-sm font-label-sm">Tanya</span>
