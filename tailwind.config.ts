@@ -114,14 +114,9 @@ const config: Config = {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-12px)" },
         },
-        tanyaPulse: {
-          "0%, 100%": { transform: "scale(1)" },
-          "50%": { transform: "scale(1.15)" },
-        },
       },
       animation: {
         float: "float 3s ease-in-out infinite",
-        "pulse-tanya": "tanyaPulse 1.5s ease-in-out infinite",
       },
     },
   },
