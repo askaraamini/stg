@@ -454,8 +454,10 @@ function ExamContent() {
   useEffect(() => {
     if (tanyaTimerRef.current) clearTimeout(tanyaTimerRef.current);
     setTanyaPulse(false);
-    if (answers[currentIndex] === null && !showResults) {
+    if (answers[currentIndex] == null && !showResults) {
+      console.log("[exam] Starting tanya timer", { currentIndex, answer: answers[currentIndex], showResults });
       tanyaTimerRef.current = setTimeout(() => {
+        console.log("[exam] TanyaPulse FIRING at", new Date().toISOString());
         setTanyaPulse(true);
       }, 120000);
     }
@@ -939,7 +941,10 @@ function ExamContent() {
         <span className="text-label-sm font-label-sm">Tanya</span>
       </button>
       {tanyaPulse && (
-        <div className="fixed bottom-container-margin-mobile right-container-margin-mobile md:bottom-container-margin-desktop md:right-container-margin-desktop w-20 h-20 md:w-24 md:h-24 rounded-full border-4 border-success-green bg-success-green/10 pointer-events-none z-40 animate-pulse" />
+        <div
+          className="fixed bottom-container-margin-mobile right-container-margin-mobile md:bottom-container-margin-desktop md:right-container-margin-desktop w-20 h-20 md:w-24 md:h-24 rounded-full pointer-events-none z-40"
+          style={{ border: "4px solid #22C55E", backgroundColor: "rgba(34,197,94,0.1)", animation: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite" }}
+        />
       )}
 
       {/* Tanya AI Chat */}
