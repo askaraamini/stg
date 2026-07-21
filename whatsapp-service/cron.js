@@ -75,7 +75,7 @@ async function runDailyCheck() {
     const completed = (sessions || []).some((s) => {
       try {
         const summary = typeof s.summary === "string" ? JSON.parse(s.summary) : s.summary;
-        return summary?.exam?.completed_at && summary?.exam?.score >= 70;
+        return summary?.exam?.completed_at;
       } catch {
         return false;
       }
@@ -88,8 +88,8 @@ async function runDailyCheck() {
   console.log("[Cron] Daily check complete");
 }
 
-// Run daily at 10:00 UTC = 17:00 WIB
-cron.schedule("0 17 * * *", runDailyCheck);
+// Run daily at 17:00 WIB
+cron.schedule("0 17 * * *", runDailyCheck, { timezone: "Asia/Jakarta" });
 
 console.log("[Cron] Scheduled daily at 17:00 WIB");
 

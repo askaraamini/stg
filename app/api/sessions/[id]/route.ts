@@ -29,7 +29,7 @@ async function notifyParentCompletion(
   const firstName = name.split(" ")[0] || name;
   const title = session.title || "";
   const subject = session.subject || "";
-  const score = exam.score ?? 0;
+  const score = Number(exam.score ?? 0);
   const assessment = (summary as any).assessment as
     | { understanding: string; what_good?: string[]; to_improve?: string[] }
     | undefined;
@@ -58,7 +58,7 @@ async function notifyParentCompletion(
     "",
     `👤 Nama: ${name}`,
     `📚 Topik: ${subject ? `${subject} - ` : ""}${title}`,
-    `💯 Skor: ${score} / 100`,
+    `💯 Skor: ${score} / 100${score >= 70 ? " ✅ LULUS" : " ❌ TIDAK LULUS"}`,
     "",
     `Catatan: ${catatan}`,
     "",
@@ -196,7 +196,7 @@ export async function PATCH(
     try {
       const parsedSummary = typeof summary === "string" ? JSON.parse(summary) : summary;
       const exam = parsedSummary?.exam;
-      if (exam?.completed_at && exam?.score >= 70) {
+      if (exam?.completed_at) {
         notifyParentCompletion(id, parsedSummary, exam).catch((e) =>
           console.error("[WhatsApp] notify error:", e)
         );
