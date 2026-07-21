@@ -944,17 +944,15 @@ function ExamContent() {
       {/* FAB Tanya */}
       <button
         onClick={() => { setShowTanya(true); setTanyaPulse(false); }}
-        className="fixed bottom-container-margin-mobile right-container-margin-mobile md:bottom-container-margin-desktop md:right-container-margin-desktop rounded-full w-20 h-20 md:w-24 md:h-24 flex flex-col items-center justify-center border-2 border-ink-navy shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] hover:scale-110 transition-transform active:translate-y-1 active:shadow-none z-50 btn-tactile bg-primary text-on-primary"
+        className="fixed bottom-container-margin-mobile right-container-margin-mobile md:bottom-container-margin-desktop md:right-container-margin-desktop rounded-full w-20 h-20 md:w-24 md:h-24 flex flex-col items-center justify-center border-2 border-ink-navy shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] hover:scale-110 transition-transform active:translate-y-1 active:shadow-none z-50 btn-tactile text-on-primary"
+        style={{
+          backgroundColor: tanyaPulse ? "#DC2626" : "#1D4ED8",
+          animation: tanyaPulse ? "pulse 1.5s ease-in-out infinite" : "none",
+        }}
       >
         <MaterialIcon name="front_hand" className="text-3xl md:text-4xl mb-1" filled />
         <span className="text-label-sm font-label-sm">Tanya</span>
       </button>
-      {tanyaPulse && (
-        <div
-          className="fixed bottom-container-margin-mobile right-container-margin-mobile md:bottom-container-margin-desktop md:right-container-margin-desktop w-20 h-20 md:w-24 md:h-24 rounded-full pointer-events-none z-40"
-          style={{ border: "4px solid #22C55E", backgroundColor: "rgba(34,197,94,0.1)", animation: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite" }}
-        />
-      )}
 
       {/* Tanya AI Chat */}
       <TanyaChat
