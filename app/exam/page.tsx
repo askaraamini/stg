@@ -78,7 +78,7 @@ function ExamContent() {
   const contextMetaRef = useRef<any>(null);
   const [showTanya, setShowTanya] = useState(false);
   const [tanyaPulse, setTanyaPulse] = useState(false);
-  const tanyaTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [questionEnteredAt, setQuestionEnteredAt] = useState<number | null>(null);
 
   // Sync answersRef with latest answers state
   useEffect(() => {
@@ -450,21 +450,30 @@ function ExamContent() {
     setCurrentIndex((i) => i - 1);
   }, [currentIndex]);
 
-  // Tanya pulse — animate after 2 min on unanswered question
+  // Tanya pulse — track when user enters an unanswered question
   useEffect(() => {
-    if (tanyaTimerRef.current) clearTimeout(tanyaTimerRef.current);
-    setTanyaPulse(false);
     if (answers[currentIndex] == null && !showResults) {
-      console.log("[exam] Starting tanya timer", { currentIndex, answer: answers[currentIndex], showResults });
-      tanyaTimerRef.current = setTimeout(() => {
+      setQuestionEnteredAt(Date.now());
+    } else {
+      setQuestionEnteredAt(null);
+      setTanyaPulse(false);
+    }
+  }, [currentIndex, showResults]);
+
+  // Separate interval — immune to re-renders and state updates
+  useEffect(() => {
+    if (questionEnteredAt == null) return;
+    const interval = setInterval(() => {
+      const elapsed = Date.now() - questionEnteredAt;
+      console.log("[exam] Tanya elapsed", Math.round(elapsed / 1000), "s");
+      if (elapsed >= 60000) {
         console.log("[exam] TanyaPulse FIRING at", new Date().toISOString());
         setTanyaPulse(true);
-      }, 120000);
-    }
-    return () => {
-      if (tanyaTimerRef.current) clearTimeout(tanyaTimerRef.current);
-    };
-  }, [currentIndex, answers[currentIndex], showResults]);
+        clearInterval(interval);
+      }
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [questionEnteredAt]);
 
   const handleFinish = () => {
     router.push("/dashboard");
