@@ -7,6 +7,23 @@
   --foreground: #0f172a;
 }
 
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined Variable';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
 @layer utilities {
   .neo-card {
     @apply border-4 border-ink-navy rounded-lg shadow-neo;
