@@ -5,10 +5,10 @@ const WHATSAPP_SERVICE_URL = "http://127.0.0.1:3001/send";
 
 async function notifyParentCompletion(
   sessionId: string,
+  supabase: ReturnType<typeof createServiceClient>,
   summary: Record<string, unknown>,
   exam: Record<string, unknown>
 ) {
-  const supabase = createServiceClient();
   const { data: session } = await supabase
     .from("sessions")
     .select("user_id, title, subject")
@@ -65,21 +65,16 @@ async function notifyParentCompletion(
     "Terus dukung konsistensi dan semangat belajarnya ya, Ayah & Bunda! ❤️",
   ].join("\n");
 
-  try {
-    const res = await fetch(WHATSAPP_SERVICE_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ phone: profile.parent_whatsapp, message }),
-    });
-    if (!res.ok) {
-      const err = await res.json().catch(() => ({}));
-      console.error("[WhatsApp] send failed:", err.error || res.status);
-    } else {
-      console.log(`[WhatsApp] completion msg sent to ${profile.parent_whatsapp}`);
-    }
-  } catch (err) {
-    console.error("[WhatsApp] fetch error:", err);
+  const res = await fetch(WHATSAPP_SERVICE_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ phone: profile.parent_whatsapp, message }),
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(`WA send failed: ${err.error || res.status}`);
   }
+  console.log(`[WhatsApp] completion msg sent to ${profile.parent_whatsapp}`);
 }
 
 async function getParams(params: Promise<{ id: string }>) {
@@ -197,9 +192,20 @@ export async function PATCH(
       const parsedSummary = typeof summary === "string" ? JSON.parse(summary) : summary;
       const exam = parsedSummary?.exam;
       if (exam?.completed_at) {
-        notifyParentCompletion(id, parsedSummary, exam).catch((e) =>
-          console.error("[WhatsApp] notify error:", e)
-        );
+        // Check if already notified to prevent duplicates
+        const { data: existing } = await supabase
+          .from("sessions")
+          .select("parent_notified_at")
+          .eq("id", id)
+          .single();
+
+        if (!existing?.parent_notified_at) {
+          await notifyParentCompletion(id, supabase, parsedSummary, exam);
+          await supabase
+            .from("sessions")
+            .update({ parent_notified_at: new Date().toISOString() })
+            .eq("id", id);
+        }
       }
     } catch {
       // ignore parse errors on notification
