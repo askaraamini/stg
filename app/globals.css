@@ -24,6 +24,14 @@
   text-rendering: optimizeLegibility;
 }
 
+@font-face {
+  font-family: 'Material Symbols Outlined Variable';
+  font-style: normal;
+  font-display: block;
+  font-weight: 100 700;
+  src: url(/fonts/material-symbols-outlined.woff2) format('woff2-variations');
+}
+
 @layer utilities {
   .neo-card {
     @apply border-4 border-ink-navy rounded-lg shadow-neo;
