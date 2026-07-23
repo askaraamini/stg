@@ -132,7 +132,7 @@ export default function DashboardPage() {
     })();
   }, [userId]);
 
-  const ongoingSessions = activeSessions.filter((s) => s.status !== "exam_passed");
+  const ongoingSessions = activeSessions.filter((s) => s.status !== "exam_passed" && s.status !== "exam_failed");
 
   const handleContinue = (id: string) => {
     if (id === "new") { router.push("/scan"); return; }

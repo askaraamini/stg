@@ -49,6 +49,7 @@ interface SessionCard {
   id: string;
   title: string;
   completedAt: string;
+  score: number;
 }
 
 function SubjectDetailPage() {
@@ -82,7 +83,7 @@ function SubjectDetailPage() {
         for (const s of raw) {
           const summary = typeof s.summary === "string" ? JSON.parse(s.summary) : s.summary;
           const exam = summary?.exam;
-          if (!exam || !exam.score || exam.score < 70) continue;
+          if (!exam || exam.score == null || !exam.completed_at) continue;
 
           const sessionSubject = s.subject && SUBJECT_ICONS[s.subject] ? s.subject : "Lainnya";
           if (sessionSubject !== subject) continue;
@@ -91,6 +92,7 @@ function SubjectDetailPage() {
             id: s.id,
             title: s.title || summary?.title || "Belajar",
             completedAt: exam.completed_at || s.started_at,
+            score: exam.score,
           });
         }
 
@@ -235,11 +237,24 @@ function SubjectDetailPage() {
                   <h4 className={`font-bold text-[14px] leading-tight mb-1 line-clamp-2 ${titleColor}`}>
                     {item.title}
                   </h4>
-                  <div className="flex items-center gap-1.5 opacity-70">
-                    <span className="material-symbols-outlined text-[12px]">calendar_today</span>
-                    <p className={`text-[10px] font-medium ${titleColor}`}>
-                      {formatRelativeTime(item.completedAt)}
-                    </p>
+                  <div className="flex items-center gap-2 flex-wrap opacity-70">
+                    <div className="flex items-center gap-1.5">
+                      <span className="material-symbols-outlined text-[12px]">calendar_today</span>
+                      <p className={`text-[10px] font-medium ${titleColor}`}>
+                        {formatRelativeTime(item.completedAt)}
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <span
+                        className="material-symbols-outlined text-[14px]"
+                        style={{ fontVariationSettings: "'FILL' 1", color: item.score >= 70 ? '#16A34A' : '#DC2626' }}
+                      >
+                        speed
+                      </span>
+                      <span className={`text-[11px] font-bold ${item.score >= 70 ? 'text-green-600' : 'text-red-500'}`}>
+                        {item.score}/100
+                      </span>
+                    </div>
                   </div>
                 </div>
                 <button

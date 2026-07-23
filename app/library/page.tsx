@@ -36,7 +36,7 @@ export default function LibraryPage() {
 
           if (!counts[subject]) counts[subject] = { materi: 0, exam: 0 };
           counts[subject].materi++;
-          if (exam && exam.score && exam.score >= 70) {
+          if (exam && exam.score != null && exam.completed_at) {
             counts[subject].exam++;
           }
         }
