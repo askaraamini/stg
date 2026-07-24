@@ -16,7 +16,7 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        source: "/:path((?!_next|fonts).*)",
+        source: "/:path(.*)",
         headers: [
           { key: "Cache-Control", value: "private, no-cache, no-store, max-age=0, must-revalidate" },
         ],
