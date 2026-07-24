@@ -79,7 +79,7 @@ export default function RegisterPage() {
             <p className="font-body-lg text-body-lg text-ink-navy">Yuk, daftar biar kita bisa belajar bareng!</p>
           </div>
           <img
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCI-voRY4pToE2gtXa7IQnPbqAbS2WYEpGMiqnIcgfn5Gb6P_RmUh2IijHRPiW5SrkGdILF6tBVhDNZmkpCcNN9nhRXjYy109sO9wlVqaxQdy90MTLnGSws92i7AE9HTL_49sYzusPxbFrAtwoJNXAOsWQtaqVek2DUDcrXc-tQ3A7l2LkKb8R324SiU5bFQE_OQ7_vL4UsPwqr5syYGdI4KN7GZhWKgAvot9cGPKScXH5465L3QrzZHSkj5EeuMluaVkRxAxkGC3qLOlM"
+            src="/images/google/939bbb64.png"
             alt="Spark the Robot"
             className="w-64 h-auto drop-shadow-2xl"
           />
@@ -99,7 +99,7 @@ export default function RegisterPage() {
           {/* Mobile mascot */}
           <div className="md:hidden flex items-center gap-4 mb-stack-md bg-secondary-container/20 p-4 rounded-lg border-2 border-dashed border-secondary">
             <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCI-voRY4pToE2gtXa7IQnPbqAbS2WYEpGMiqnIcgfn5Gb6P_RmUh2IijHRPiW5SrkGdILF6tBVhDNZmkpCcNN9nhRXjYy109sO9wlVqaxQdy90MTLnGSws92i7AE9HTL_49sYzusPxbFrAtwoJNXAOsWQtaqVek2DUDcrXc-tQ3A7l2LkKb8R324SiU5bFQE_OQ7_vL4UsPwqr5syYGdI4KN7GZhWKgAvot9cGPKScXH5465L3QrzZHSkj5EeuMluaVkRxAxkGC3qLOlM"
+              src="/images/google/939bbb64.png"
               alt="Spark"
               className="w-20 h-20"
             />

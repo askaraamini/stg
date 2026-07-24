@@ -5,13 +5,13 @@ import { useRouter } from "next/navigation";
 
 const SLIDES = [
   {
-    imageUrl: "https://lh3.googleusercontent.com/aida/AP1WRLvVLJnvym6nDYuDqnjnBtg8uUw0w6xy7LEqihTvAVi8uxwGic_tukcH_ixmdC-9yTn8vun7pc7zg_Zc35Hyowkgh58hIhSqyxCB8N1sKaxR3PN7Ih1c2vbn6hUkgu83eqfkKUSfQ4088gmIn4BbiliJA_NhCaA4jiQK32nHhzmOGUSlBFY1ns4TqNUyJrdocdin4XHIQgsy26tl58C0GtDb2PZRcVxwxPUsheZzoFmTaMpzcQWpfIvhTQ4",
+    imageUrl: "/images/google/af072146.png",
     title: "Scan Buku Baru",
     desc: "Temukan dunia baru dengan koleksi buku anak-anak yang interaktif dan menyenangkan.",
     button: "Mulai Sekarang",
   },
   {
-    imageUrl: "https://lh3.googleusercontent.com/aida/AP1WRLsQGufSV_oONvmRcvHtR0GTXRGNviRua8DcRtLvVbRVptxoduTrnF42aQaO27ShyyaFp6TdUfiCQc6B9ApB6sCS0rrfkR48t-z5ZjOAd2H9nnEgzY_jUX3Kw13d6Vo4b5SR51UBDGAYgI3oQR4ku1C00F_HJDUxfSX1gwxYxIaCPDu_PlASBKJjh3sT20jnVKnisliuOOpIvzRu5BzCX2IotEXCkfV3AYqVNxU7cB6IL1fMIwHKqaWD0Ug",
+    imageUrl: "/images/google/586b808b.png",
     title: "Belajar Bersama!",
     desc: "Selesaikan tantangan seru bersama teman-temanmu setiap hari.",
     button: "Main Sekarang",

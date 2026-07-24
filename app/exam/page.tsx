@@ -589,7 +589,7 @@ function ExamContent() {
                 <img
                   alt="Robot Mascot"
                   className="w-full h-full object-contain"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx8h0wue-S-MExfhbd8PDaM2Gy9ssI4N7gBwoF8znQsYOPptK4XtcJfT-km4Ve71Hl2VndKAwySa9OSb-zFRSf_Bjfjc0KlW5mfPCwLalWhWqKUtmEWiOGzimOlUw-dk-yicfbVW6DxRgD9n7gghH9lmPBFwmRwl2LhxGl-EImr5RGVLRKszy5TZ_5M6Bmte7ohpYlkhKpT_7k8QjcDAT4Wrcghzi2kILvF4MxH_JcU8rZEKdf9IqSz2V3rFj4mBSqYUrORjx-Lq0Z2us"
+                  src="/images/google/7e6b2c1f.png"
                   style={{ mixBlendMode: "multiply" }}
                 />
               </div>
@@ -653,7 +653,7 @@ function ExamContent() {
               <img
                 alt="Robot Mascot"
                 className="w-full h-full object-contain"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkpMKPAazOkt8eL3yL--y4EzexIWD9ApB-FVtXbv-MCYaZvXzXH-2eMj3Fu7Hqf-6hzgI51060emye3PQAL0VaAlQUBk1wU5UmoLK20nzoc82514QrcPyn5DLnrP1e-sA_JLm6Zto1Iv-6Eqvw7Zl5GaXCwX5t0-_HVFFPOM2mLKQNSLpNHPlHeYY8WyGoQWn_WcpXoOKC5OjO3qaXOxwBlDFoD_6r8sG9zPdY1itrkZWUWWWutUdEaFwIlqBhbZUKBgj1veQIL0WEa1Y"
+                src="/images/google/866fc698.png"
               />
             </div>
 
@@ -894,7 +894,7 @@ function ExamContent() {
               <img
                 alt="Robot Mascot"
                 className="w-full h-full object-contain drop-shadow-lg"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVi7koNp8NS3cwBV1VnKBZ6X460W587zWaTbveDg1Jj4tMm5oL89pjaucjP9jMsZDxe3cfndzLepkt6M1NgkxleH92RoaBQXGTV_nKKW9ETHvDdVmKs_9XoxVjNM_OArjuPs7MeUCbX6Rx5KJNbevEJbQpgH03IDkJSaNzpY-01iMUxvk6dEqOUGw71pmGQlZDCmWsvkdZjyHjvNr_SMEWtZd28ECTXVxTd795PFgtOOzm5frYu2N4LhcL2jSovyZfIrAOQd43XwKyJOg"
+                src="/images/google/5262c968.png"
               />
             </div>
             <div className="relative bg-sky-blue-bg border-2 border-ink-navy rounded-2xl px-6 py-4 mb-6 shadow-[2px_2px_0px_0px_rgba(15,23,42,1)]">
@@ -921,7 +921,7 @@ function ExamContent() {
               <img
                 alt="Robot Mascot"
                 className="w-full h-full object-contain drop-shadow-lg"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVi7koNp8NS3cwBV1VnKBZ6X460W587zWaTbveDg1Jj4tMm5oL89pjaucjP9jMsZDxe3cfndzLepkt6M1NgkxleH92RoaBQXGTV_nKKW9ETHvDdVmKs_9XoxVjNM_OArjuPs7MeUCbX6Rx5KJNbevEJbQpgH03IDkJSaNzpY-01iMUxvk6dEqOUGw71pmGQlZDCmWsvkdZjyHjvNr_SMEWtZd28ECTXVxTd795PFgtOOzm5frYu2N4LhcL2jSovyZfIrAOQd43XwKyJOg"
+                src="/images/google/5262c968.png"
               />
             </div>
             <div className="relative bg-sky-blue-bg border-2 border-ink-navy rounded-2xl px-6 py-4 mb-6 shadow-[2px_2px_0px_0px_rgba(15,23,42,1)]">

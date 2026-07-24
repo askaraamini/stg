@@ -295,7 +295,7 @@ export function ScannerScreen() {
           <img
             alt="Camera view"
             className="absolute inset-0 z-0 w-full h-full object-cover"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBemzCkBtMYAUG6_T9tzsEdUx3GdQOEYWxgYCB0yYmdFxqUQuo3GM007gpvGZw-XHW7M0NE380Y4EQXUkRq2Q2C3fTJsRL__5gmXrRGJlB3jeKBPYm_K-dhmxEKUncrhNaFrFoisa_EXNy2MJfoboDe_Y_YtzmVXeGmiNPhLdixSJqEWe83F1c6YsLXTeyCROOOKSB_qVXkJYlueDwJsfxXx6xTn0D_pxtEMXKAb-Mx5BBx0lMXNdKUA"
+            src="/images/google/55520017.png"
           />
 
           {/* Camera Video Feed — always rendered so useCamera ref is available */}

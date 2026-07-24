@@ -140,7 +140,7 @@ export default function ProfilePage() {
             <img
               alt="Avatar"
               className="w-full h-full object-cover"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgaJLpiyz91yEUvbJjAEACV91TSkHvPAluh58vGNZ28AudJB1Z384GPxV5Q25LZnc6uXCXJRLt-E4XsXNoHc1YOqxUWq-6KoefXV86emUe3ux5DHEZn-K9wS8iFHqiBzhCMVx4Pe1ZfChnGj-lepfcVQb0c_9B2gpOF7N2dZI41hlvwXEqKu1WFP4w1Pun4QHQMQ7Vaz1vTm0zNotGGe-VeIN9E3nnkPUv5yeqKYjcFewh-9f-cONcNA"
+              src="/images/google/80427e32.png"
             />
           </div>
         </div>
@@ -155,7 +155,7 @@ export default function ProfilePage() {
               <img
                 alt="Robot Mascot"
                 className="w-20 h-20 object-contain"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3mPJIL5VOKeuZ2uANgOge0pT69HDOQ3USgq7PyLk0S_8UqcQ07pHCLAI2k5awvqrt_72BAnkN3KaRw_7Sr-6dld97o98TUe0rSe6ebKElDrZz6eAwGUVxaABCkJguq__ik5xEGT6rnTCHdqTn0xmz77oHk2hKX07ugsBcz3RFQnSg_AFb39lcQ_140a5xvRF8hWjxye-GmaFSYcXx_xtdovZDGXUcBJth8FO5Jf_WGn8MKXuQ8mSY9MNtZh-pSX6AN5Ld8nTBv7MKR7I"
+                src="/images/google/1ebabc29.png"
               />
             </div>
           </div>

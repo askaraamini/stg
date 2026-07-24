@@ -1,6 +1,6 @@
 "use client";
 
-const AVATAR_URL = "https://lh3.googleusercontent.com/aida-public/AB6AXuDdV3q3U_ELxvlS55Q2HIn-yZwysbJEWnvzsivd1oxCPKzN4Bbn2JPEe2Qk7djPsOMnIGt9hHftLIsfb1vxZOSkKUJrqWpqtti30q1FB9QLQBCbRX3rwiEhP5pzyJ-cCKWVkkswBeOEFIdgKsQaF9IfPvAPXwNPWS4CJmoM-LMkeawTp3nL3Gwd1rjOwg-Z5EIA_OZMaq1zNZToSyYa1oO3z0uvuW4wy1elliJnppU-UMbDk_zBu9aT-lzBKk4sysHXaA";
+const AVATAR_URL = "/images/google/a162a15e.png";
 
 export function MobileTopBar() {
   return (

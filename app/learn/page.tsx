@@ -566,7 +566,7 @@ function LearnContent() {
                 <img
                   alt="Robot Mascot"
                   className="w-full h-full object-contain drop-shadow-lg"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVi7koNp8NS3cwBV1VnKBZ6X460W587zWaTbveDg1Jj4tMm5oL89pjaucjP9jMsZDxe3cfndzLepkt6M1NgkxleH92RoaBQXGTV_nKKW9ETHvDdVmKs_9XoxVjNM_OArjuPs7MeUCbX6Rx5KJNbevEJbQpgH03IDkJSaNzpY-01iMUxvk6dEqOUGw71pmGQlZDCmWsvkdZjyHjvNr_SMEWtZd28ECTXVxTd795PFgtOOzm5frYu2N4LhcL2jSovyZfIrAOQd43XwKyJOg"
+                  src="/images/google/5262c968.png"
                 />
               </div>
               <div className="relative bg-sky-blue-bg border-2 border-ink-navy rounded-2xl px-6 py-4 mb-6 shadow-[2px_2px_0px_0px_rgba(15,23,42,1)]">
@@ -702,7 +702,7 @@ function LearnContent() {
               <img
                 alt="Robot Mascot"
                 className="w-full h-full object-contain drop-shadow-lg"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVi7koNp8NS3cwBV1VnKBZ6X460W587zWaTbveDg1Jj4tMm5oL89pjaucjP9jMsZDxe3cfndzLepkt6M1NgkxleH92RoaBQXGTV_nKKW9ETHvDdVmKs_9XoxVjNM_OArjuPs7MeUCbX6Rx5KJNbevEJbQpgH03IDkJSaNzpY-01iMUxvk6dEqOUGw71pmGQlZDCmWsvkdZjyHjvNr_SMEWtZd28ECTXVxTd795PFgtOOzm5frYu2N4LhcL2jSovyZfIrAOQd43XwKyJOg"
+                src="/images/google/5262c968.png"
               />
             </div>
             <div className="relative bg-sky-blue-bg border-2 border-ink-navy rounded-2xl px-6 py-4 mb-6 shadow-[2px_2px_0px_0px_rgba(15,23,42,1)]">

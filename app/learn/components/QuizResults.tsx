@@ -54,7 +54,7 @@ export function QuizResults({ score, total, title, sessionId, onRetry, regenerat
           <img
             alt="Robot mascot cheering"
             className="relative z-10 w-full h-full object-contain"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4FOfA4_msLFTQQpbSb9ct2tH63Dc5I5bGH64ayMZLTbn7Oo4DeojTLL06Qq5DbOc9lxhdPEkLmiPv6XjDD3O50oE-e_E4F3JTFJdxEVujrx1e0PfapE2jNU9Z4S8EUZz1_hjISLL2FJKi_xFAKb4Y6J68Zq_38FPvlzBmaR6jXJo6TStKV07-soX-XQ5xOvnj_6HXnKzRd9OKuR5ck5AMJUcrzrntYFvf870YAE13v9iPj_Dvk4nP9ypARhw8aa-o8dz5FRYzso5GY6Y"
+            src="/images/google/d092759c.png"
           />
           <div className="absolute -top-4 -left-4 bg-tertiary-fixed border-2 border-ink-navy p-3 rounded-lg shadow-[8px_8px_0px_0px_rgba(15,23,42,1)] -rotate-12">
             <MaterialIcon name="star" className="text-ink-navy" filled />

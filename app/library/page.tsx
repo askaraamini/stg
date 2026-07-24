@@ -88,7 +88,7 @@ export default function LibraryPage() {
               <img
                 alt="Avatar"
                 className="w-full h-full object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-oJACA8xxEE9P75kpHuNj1s6YQAqVlae-SXMtLCgpP925AxHPqxg6UtGjp9zojSHknfqv5QdsSmqXDSie1ezOxD2q3xeAZJAaH9AHDlaYgaEovYzitdR2-gm86Dd3mBZtedajcOjU-U8VWTn8vune87CjcB6S0QLQ6F0ibTlAFeBAOdajSCagT8v9aRlxLq-zM3Q95gQZAK7Qf1eao1iiIAa-BSJ9jIGdTU0jrkHU-E5IqJDsNRlcqxUjx7r3vS8gjA"
+                src="/images/google/1f8daee0.png"
               />
             </div>
           </div>
@@ -120,7 +120,7 @@ export default function LibraryPage() {
                 <img
                   alt="Mascot"
                   className="w-full h-full object-contain"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpBaNplxe86k52uLvyKKxEv9eKA0AiW8nbwiaiJ7VCcaokfNxgx8fUmhupfiXEeMpOFnNVWBGy_4imJBCiVj--xF45wDgBHQ7fieWB5byr5oMPajSD7bNZmRH0K9OzQ9r45oX0Y48JIUAaVYf298hH-U93uXycpdMiDtKaxICa4wCXliIacDUTEarnhv7yk2tiuuNtrgFskHJ2sdXNwT-G1XrYBygB9-0GAYbnBwZhyupJ_dAB8_ZfUkyYXValwDhehq_UY42-JZhCXY0"
+                  src="/images/google/715a5cbf.png"
                 />
               </div>
               <h2 className="text-headline-md font-bold text-on-surface mb-2">

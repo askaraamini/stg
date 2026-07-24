@@ -6,9 +6,9 @@ import { MaterialIcon } from "@/components/ui/MaterialIcon";
 import type { ActiveSession } from "../types";
 
 const MASCOT_URLS = [
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuC7IvwhqDbze04L3XmC8DWhyhwKCkdENdl1UhhcnWC8fT3jSqOtySF4cl4wO-OWjUeui6aXFG9KlEf0ymLvYzXEHcmt_YvzyPBvPkQwM-K4nBkPMII4jDQNPgDbNF0RKxujsBa9L0ISy3mzVBglSYDoL8asdtordCnVTFZfywJUI-riE7QOH3gsqsKlSpedBTrXgXnTqLJHlqZiaCYSgHspDjwtWPUxhXHRO5t1Fm7QmDwN3Qe-KoktL7GgVR61OIvsxw",
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuBGei5sF-W_lAH2nLZqLd_e6bPID95Hs2dDH_ns0OeHPNVoaMLAAAf8I4kx0fjSi5A1P1mVcaA3tqcyg66Bo4AuSlaC5XXkom7kHupBO9cI5DIqffYC_RYNBDcar5br0jV0pplimZ8h8wldUDPwui_6ZIV4MSdmHHTGHcBmiT2xRbMAsN-ogHN6ZJQq9buiXPDqRdaiioubxlXv5_SM1lymQm7rVUqSC5Earq7gSD6m1MaOyTF4tUiMWmGzDBBRFJo0Zg",
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuD89uUQUZPczU9n5PIXQgDwzHwt2sCY4OWBetb86v7tCM0bZ7p4wzZv217kKoRfPRTSRiO7gpbLPSfi5zy4pBNTdcUMH70UowWIrelVSbqikLj2FxjchVPsmHOtYVpl0sBvnYjkb4xg5CLZG8495DT-IJ8IM508Sh-TAaUkTpcfrvzHhVgj_OObc3YnEN9OSWRI9qQSIa9veV68rIrqrImRaM-f4rStybHwiSXCsA36M8pbheMsw0fGUFfl5G_OaGIVAg",
+  "/images/google/9835bcb3.png",
+  "/images/google/dc6132f2.png",
+  "/images/google/aeeff363.png",
 ];
 
 interface ContinueLearningProps {

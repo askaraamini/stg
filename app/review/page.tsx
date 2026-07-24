@@ -37,9 +37,9 @@ const SPEECH_TEXTS = {
 };
 
 const MINI_MASCOTS = [
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuDuGpSzqGyALBw2HhtHy2zRUNPbJEvWHikTv8rPLDgdKWSplYJ9wXqxymTegIzLneZ8eV515stXF4RXA9pim1eP5jLB_VeesK03e40G6aD21sDh6Cc80ziatFij3u0fLunKZ-xFwY9l2p8crZNe4Mk74Fo1nLlsMly_ackoYnLBD6-Cb1ftvkXovxoQHC9Z5TFznxWoLKupdV2yY6UxjjL2uY7Dfz47tAjdMA6rhQR5KS9Z9D-ejXHef3mwR6_S7d9cEMFFiqZWv_aOCN8",
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuApd9tgLv7DYMQP0JdGXPlsMCG_vYUa3xm0_e5apKy3wmxS6wYhajK8JgQJ5CoxC38SoVVKK_zbG4r1IYO5fMQFtu7JYw8lsB_dVBZlfqUEyGp5_zBVO2lFtdpbdLJc8_tfmY6jAVMVxRL8nEy50zuBsyImLtDCV6EYS4i02ke5WgSxK8mRZ-3IQsQbuiN0MdZsOgIWgaMjrI4HNzWx6Nkb2bpm4EHtKRg7JSVPPGvfmSMzUFdzNRY7Oja-IpmPj1FWppxrbn2NiSqeqac",
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuAbOVk6SJsweiN_nvdVWXdh2Xy13sW8kyqsJnuLVsLVrivSt2TAJexVefrQWZxqxODWTC3piaPCTUwUf7L3MYj-hj_9_vwuOmkE04EEFN_EMDQjvuGIyIECg9oWD9ENtzAJMmTkhC3haYOkt_Tss6UWW3jKTY9zunACBEuUhTPjvTyqwPWb0Qkss61YRhqD1UwLEGGSzO-nJ6t6ld2hg8qI4t1h7T31ewlQA7erR4QxtlI7fBA9Dae77IQWvwUBKdKrm4rzBUxSthTqOvY",
+  "/images/google/30882c59.png",
+  "/images/google/05628cbb.png",
+  "/images/google/02a69294.png",
 ];
 
 function ReviewContent() {
@@ -158,7 +158,7 @@ function ReviewContent() {
           <img
             alt="Spark the Robot"
             className="w-24 h-24 object-contain animate-bounce flex-shrink-0"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuMro2x217BRlyEICz7ldD5Ng9GhtkYRAQBQOaRehQpWmhuK4y6DO_Wemc93-jrGFEfwXUYoT2Ll9RDweNDZAdisPiEWp_hVDqFXTegUNSBeMNn2hON_k6bzOtUbM7cx9Gs1oN04ADs_gnvwAvf-YFHKQZ_eH8ekoOenfS9wi1UmQKBPcz8-VlabnTovBnK4X7U_6RaVpV_2A7KE_ChbLC3C4hLqRudXbc6ViLJD7QOnm16QVSAR9MCO4BWn4stEWxPuwHInKBHxIAIzs"
+            src="/images/google/6b11f30f.png"
           />
           <div className="relative bg-white border-2 border-ink-navy p-4 rounded-lg shadow-[4px_4px_0_0_#111c2d] flex-1">
             <div className="absolute -left-3 top-5 w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-r-[12px] border-r-ink-navy" />

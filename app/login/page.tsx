@@ -56,7 +56,7 @@ export default function LoginPage() {
         <div className="flex flex-col md:flex-row items-center gap-4 w-full max-w-sm md:max-w-2xl">
           <div className="w-32 h-32 md:w-40 md:h-40 flex-shrink-0">
             <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1oIs0yS8EXES0ZPXjQTuKzZprNp33RdXwJ0Ame_rJcyXtkP2W3j4ZrLlt2_io1557bfhCEU0sHOfIZa6gaCnYDrNd6z2JYIWL7V0pR17a6sOyjgo949OjbrG7y0jaY9Xoj38LEBVlRiNNG3T_BqzH1rsxjIC5sJT8vdCkZ0hSIMPQa5SInaFvmpoIqxcoe91bH5Kbz1QYWfWMXQ9wGWGMU-9yeCvDl4fSVtDAKUqvE2Qc-1vVU5JSQFG-FeylZcL7L9C9WzmYwYrb66A"
+              src="/images/google/bce7efc2.png"
               alt="Spark the Robot"
               className="w-full h-full object-contain"
             />
