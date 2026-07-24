@@ -77,3 +77,12 @@ export const SUBJECT_IMAGE_FILE: Record<string, string> = {
   "Bahasa Indonesia": "/images/Bahasa Indonesia.png",
   "Seni & Budaya": "/images/Seni & Budaya.png",
 };
+
+export const SUBJECT_ICON_NAMES: Record<string, string> = {
+  "Matematika": "calculate",
+  "IPA (Sains)": "science",
+  "IPS (Sejarah)": "history_edu",
+  "Bahasa Inggris": "language",
+  "Bahasa Indonesia": "translate",
+  "Seni & Budaya": "palette",
+};

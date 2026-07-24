@@ -5,13 +5,13 @@ import { useRouter } from "next/navigation";
 
 const SLIDES = [
   {
-    imageUrl: "/images/google/af072146.png",
+    imageUrl: "/images/screen1.png",
     title: "Scan Buku Baru",
     desc: "Temukan dunia baru dengan koleksi buku anak-anak yang interaktif dan menyenangkan.",
     button: "Mulai Sekarang",
   },
   {
-    imageUrl: "/images/google/586b808b.png",
+    imageUrl: "/images/screen2.png",
     title: "Belajar Bersama!",
     desc: "Selesaikan tantangan seru bersama teman-temanmu setiap hari.",
     button: "Main Sekarang",

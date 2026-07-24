@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { SUBJECT_ICONS, SUBJECT_ORDER } from "@/lib/subjects";
+import { SUBJECT_ICONS, SUBJECT_ORDER, SUBJECT_ICON_NAMES } from "@/lib/subjects";
 
 interface SubjectScoreData {
   subject: string;
@@ -64,7 +64,9 @@ export function SubjectScoreList({ scores, children }: SubjectScoreListProps) {
                   <img alt={s.subject} className="w-8 h-8 md:w-11 md:h-11 object-contain" src={meta.imageUrl} />
                 ) : (
                   <div className="w-8 h-8 md:w-11 md:h-11 flex items-center justify-center text-on-surface">
-                    <span className="material-symbols-outlined text-2xl">menu_book</span>
+                    <span className="material-symbols-outlined text-2xl" style={{fontVariationSettings: "'FILL' 1"}}>
+                      {SUBJECT_ICON_NAMES[s.subject] || "menu_book"}
+                    </span>
                   </div>
                 )}
               </div>

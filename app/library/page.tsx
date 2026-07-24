@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { BottomNavigation } from "@/app/dashboard/components/BottomNavigation";
 import { getDeviceId } from "@/lib/device-id";
 import { useUser } from "@/lib/user-store";
-import { SUBJECT_ICONS, SUBJECT_ORDER } from "@/lib/subjects";
+import { SUBJECT_ICONS, SUBJECT_ORDER, SUBJECT_ICON_NAMES } from "@/lib/subjects";
 
 interface SubjectSummary {
   name: string;
@@ -148,7 +148,7 @@ export default function LibraryPage() {
                     <img alt={s.name} className="w-full h-full object-contain" src={imgUrl} />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center bg-surface-container rounded-xl">
-                      <span className="material-symbols-outlined text-3xl text-on-surface-variant">menu_book</span>
+                      <span className="material-symbols-outlined text-3xl text-on-surface-variant">{SUBJECT_ICON_NAMES[s.name] || "menu_book"}</span>
                     </div>
                   )}
                 </div>
@@ -185,7 +185,7 @@ export default function LibraryPage() {
                     <img alt={s.name} className="w-full h-full object-contain" src={imgUrl} />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center bg-surface-container rounded-xl">
-                      <span className="material-symbols-outlined text-3xl text-on-surface-variant">menu_book</span>
+                      <span className="material-symbols-outlined text-3xl text-on-surface-variant">{SUBJECT_ICON_NAMES[s.name] || "menu_book"}</span>
                     </div>
                   )}
                 </div>

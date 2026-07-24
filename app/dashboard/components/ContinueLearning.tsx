@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { SUBJECT_ICONS } from "@/lib/subjects";
+import { SUBJECT_ICONS, SUBJECT_ICON_NAMES } from "@/lib/subjects";
 import { MaterialIcon } from "@/components/ui/MaterialIcon";
 import type { ActiveSession } from "../types";
 
@@ -63,7 +63,7 @@ export function ContinueLearning({ sessions, onContinue }: ContinueLearningProps
                 {imgUrl ? (
                   <img alt="" className="w-8 h-8 object-contain" src={imgUrl} />
                 ) : (
-                  <MaterialIcon name="menu_book" className="text-on-surface text-2xl" filled />
+                  <MaterialIcon name={SUBJECT_ICON_NAMES[session.subjectName] || "menu_book"} className="text-on-surface text-2xl" filled />
                 )}
               </div>
               <div className="relative z-10 pr-20">
