@@ -66,13 +66,12 @@ async function runBackfill() {
   console.log("[Backfill] Starting...");
   const today = new Date().toISOString().split("T")[0];
 
-  // Get today's sessions that have completed_at but not yet notified
+  // Get sessions with completed exam that haven't been notified
   const { data: sessions, error } = await supabase
     .from("sessions")
     .select("id, user_id, title, subject, summary, parent_notified_at")
-    .gte("started_at", today)
-    .lte("started_at", `${today}T23:59:59.999Z`)
-    .is("parent_notified_at", null);
+    .is("parent_notified_at", null)
+    .not("summary", "is", null);
 
   if (error) {
     console.error("[Backfill] DB error:", error.message);
