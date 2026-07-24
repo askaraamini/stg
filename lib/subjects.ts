@@ -8,42 +8,42 @@ export interface SubjectMeta {
 
 export const SUBJECT_ICONS: Record<string, SubjectMeta> = {
   "Matematika": {
-    imageUrl: "",
+    imageUrl: "/images/Matematika.png",
     gradient: "from-purple-100 to-pink-100",
     textColor: "text-purple-900",
     progressColor: "bg-purple-600",
     ringColor: "#fdc003",
   },
   "IPA (Sains)": {
-    imageUrl: "",
+    imageUrl: "/images/IPA.png",
     gradient: "from-blue-100 to-teal-100",
     textColor: "text-blue-900",
     progressColor: "bg-teal-600",
     ringColor: "#005da7",
   },
   "IPS (Sejarah)": {
-    imageUrl: "",
+    imageUrl: "/images/IPS.png",
     gradient: "from-orange-50 to-yellow-100",
     textColor: "text-orange-900",
     progressColor: "bg-orange-500",
     ringColor: "#785900",
   },
   "Bahasa Inggris": {
-    imageUrl: "",
+    imageUrl: "/images/Bahasa inggris.png",
     gradient: "from-indigo-100 to-blue-100",
     textColor: "text-indigo-900",
     progressColor: "bg-indigo-600",
     ringColor: "#005da7",
   },
   "Bahasa Indonesia": {
-    imageUrl: "",
+    imageUrl: "/images/Bahasa Indonesia.png",
     gradient: "from-red-50 to-orange-100",
     textColor: "text-red-900",
     progressColor: "bg-red-600",
     ringColor: "#ba1a1a",
   },
   "Seni & Budaya": {
-    imageUrl: "",
+    imageUrl: "/images/Seni & Budaya.png",
     gradient: "from-emerald-100 to-green-100",
     textColor: "text-emerald-900",
     progressColor: "bg-emerald-600",
